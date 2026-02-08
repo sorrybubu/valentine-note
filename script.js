@@ -1,7 +1,7 @@
-// ---------- PASSWORD (change this value) ----------
-const PASSWORD = "valentine"; // <<-- CHANGE THIS to whatever you want
+// ---------- PASSWORD (change this value if you want) ----------
+const PASSWORD = "valentine"; // change if needed
 
-// ---------- GATE LOGIC ----------
+// ---------- GATE LOGIC (if used on index) ----------
 const openBtn = document.getElementById('openBtn');
 const pwdInput = document.getElementById('pwd');
 const errorEl = document.getElementById('error');
@@ -9,11 +9,9 @@ const errorEl = document.getElementById('error');
 function goOpen() {
   const v = pwdInput ? pwdInput.value.trim() : "";
   if (v === PASSWORD) {
-    // go to the valentine page
     window.location.href = 'valentine.html';
   } else {
     if (errorEl) errorEl.innerText = "No worries — open only if you want to.";
-    // subtle shake
     if (pwdInput) {
       pwdInput.animate([{transform:'translateX(-4px)'},{transform:'translateX(4px)'},{transform:'translateX(0)'}],{duration:220});
     }
@@ -48,3 +46,10 @@ function closeLightbox(e){
 
 // prevent event bubbling when clicking the image
 if(lbImg) lbImg.addEventListener('click',(e)=>e.stopPropagation());
+
+// ---------- NEW: showPhotoChoice (maps buttons to photos) ----------
+function showPhotoChoice(src, caption){
+  // small visual feedback: quick pulse on the button clicked (the event isn't passed here),
+  // open the same lightbox used by gallery
+  openLightbox(src, caption);
+}
