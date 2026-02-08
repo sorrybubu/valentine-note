@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Happy Valentine’s Day</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-soft">
+
+  <header class="hero">
+    <div class="hero-inner">
+      <h1 class="serif">Happy Valentine’s Day ❤️</h1>
+      <p class="lead">No pressure. No drama. Just a tiny thing I made to make you smile.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="message card">
+      <p>I hope today brings you a quiet smile, a warm cup, and one tiny moment of calm.</p>
+      <p class="muted">— from me 🌸</p>
+    </section>
+
+    <section class="gallery card" aria-label="Photos">
+      <!-- Add your images into the photos/ folder and match filenames -->
+      <button class="imgbtn" onclick="openLightbox('photos/1.jpg','Memory 1')">
+        <img loading="lazy" src="photos/1.jpg" alt="memory 1" />
+      </button>
+
+      <button class="imgbtn" onclick="openLightbox('photos/2.jpg','Memory 2')">
+        <img loading="lazy" src="photos/2.jpg" alt="memory 2" />
+      </button>
+
+      <button class="imgbtn" onclick="openLightbox('photos/3.jpg','Memory 3')">
+        <img loading="lazy" src="photos/3.jpg" alt="memory 3" />
+      </button>
+
+      <button class="imgbtn" onclick="openLightbox('photos/4.jpg','Memory 4')">
+        <img loading="lazy" src="photos/4.jpg" alt="memory 4" />
+      </button>
+
+      <button class="imgbtn" onclick="openLightbox('photos/5.jpg','Memory 5')">
+        <img loading="lazy" src="photos/5.jpg" alt="memory 5" />
+      </button>
+
+      <button class="imgbtn" onclick="openLightbox('photos/6.jpg','Memory 6')">
+        <img loading="lazy" src="photos/6.jpg" alt="memory 6" />
+      </button>
+    </section>
+  </main>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true" onclick="closeLightbox(event)">
+    <button class="lb-close" aria-label="Close" onclick="closeLightbox(event)">&times;</button>
+    <div class="lb-inner">
+      <img id="lb-img" src="" alt="" />
+      <p id="lb-caption" class="muted"></p>
+    </div>
+  </div>
+
+  <footer class="foot muted">
+    <small>Made with calm intentions.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
